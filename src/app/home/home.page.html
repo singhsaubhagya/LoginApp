@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Users List
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="logOut()">
+        <ion-icon slot="end" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="" class="md hydrated" style="--offset-top: 76px; --offset-bottom: 0px;">
+  <ion-list class="md list-md hydrated">
+    <ion-list-header class="md hydrated"> User List </ion-list-header>
+
+    <ion-item class="item-has-start-slot item md item-fill-none in-list hydrated item-label"
+      *ngFor="let user of usersList">
+      <ion-avatar slot="start" class="md hydrated">
+        <img [src]="user.avatar">
+      </ion-avatar>
+      <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
+        <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+        <h3>{{ user.email }}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
